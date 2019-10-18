@@ -14,7 +14,8 @@ app.get('/download24', function(req, res){
   var newFileName = encodeURIComponent(filename);
 
   res.setHeader('Content-disposition', 'attachment; filename*=UTF-8\'\'' + newFileName);
-  res.setHeader('Content-type', "application/octet-stream",);
+  res.setHeader('Content-type', "application/octet-stream");
+  res.setHeader('status', "200");
 
   var filestream = fs.createReadStream(file);
   filestream.pipe(res);
@@ -28,7 +29,8 @@ app.get('/download25', function(req, res){
 	var newFileName = encodeURIComponent(filename);
   
 	res.setHeader('Content-disposition', 'attachment; filename*=UTF-8\'\'' + newFileName);
-	res.setHeader('Content-type', "application/octet-stream",);
+	res.setHeader('Content-type', "application/octet-stream");
+	res.setHeader('status', "200");
   
 	var filestream = fs.createReadStream(file);
 	filestream.pipe(res);
